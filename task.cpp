@@ -2,13 +2,13 @@
 #include <time.h>
 using namespace std;
 
-int arrayGen(int* arr, int arrSize);
+void arrayGen(int* arr, int arrSize);
 
 int main() {
 	srand(time(NULL));
 
 	int size;
-	cout << "Enter arr size";
+	cout << "Enter arr size: ";
 	cin >> size;
 	int* arr = new int[size];
 
@@ -17,12 +17,11 @@ int main() {
 	return 0;
 }
 
-int arrayGen(int* temp, int arrSize) {
+void arrayGen(int* temp, int arrSize) {
 
 	for (int i = 0; i < arrSize; i++)
 	{
-		(*temp)[i] = rand() % 90 + 10;
+		*(temp + 1) = rand() % 90 + 10;
 	}
 
-	return temp;
 }
